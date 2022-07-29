@@ -1,0 +1,323 @@
+/* For heading  */
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap");
+/* Button font  */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600;800&display=swap");
+/* Paragraph */
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+/* Brand  */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+:root {
+  --titlefont: "Titillium Web", sans-serif;
+  --parafont: "Varela Round", sans-serif;
+  --btnfont: "Cairo", sans-serif;
+  --defultpadding: 4rem;
+  --grey: #7d7d7d;
+  --darkgrey: #73777b;
+  --purewhite: #ffffff;
+  --light: #cad5e2;
+  --dark: #0d0d0d;
+}
+
+/* ------------- Top Page design ------------ */
+#particles-js {
+  background: url(../images/beanstalk-dark.webp);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container {
+  color: var(--purewhite);
+  position: absolute;
+  top: 35%;
+  text-align: center;
+}
+
+.header-container > h2 {
+  font-family: var(--titlefont);
+  font-size: 45px;
+}
+
+.header-container > p {
+  font-family: var(--parafont);
+  color: var(--light);
+}
+
+.header-btn {
+  padding: 10px 30px;
+  margin-top: 40px;
+  border-radius: 5px;
+  font-family: var(--btnfont);
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--dark);
+  background-color: var(--purewhite);
+}
+/* ----------------------------- */
+/* -------------- Navbar ---------------- */
+nav {
+  padding: 1rem var(--defultpadding);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #ffffff;
+}
+
+.menubar {
+  display: none;
+}
+
+.menubar > i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.brand {
+  flex-grow: 1;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list-item {
+  margin: 0 5px;
+}
+
+.list-item-link {
+  color: var(--grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: var(--btnfont);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-list > li:nth-child(1) > .list-item-link {
+  color: black;
+  font-weight: 500;
+}
+
+/* --------- Body ---------- */
+/* ------ Reusable components ---------- */
+.main-heading {
+  text-align: center;
+  font-family: var(--titlefont);
+  font-size: 35px;
+  padding: 10px 0;
+}
+
+.main-subheading {
+  font-family: var(--parafont);
+  text-align: center;
+  color: var(--grey);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3.5rem 0;
+}
+
+.card {
+  display: inline-block;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  border-radius: 7px;
+  /* width: 375px; */
+  max-width: 30%;
+  min-width: 350px;
+  padding: 20px 10px;
+  margin: 20px 10px 0 0;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.card-img-sec > img {
+  width: 100%;
+}
+
+.project-box > hr {
+  height: 3px;
+  background-color: #1d1d1d;
+}
+
+.card-content {
+  padding-left: 20px;
+}
+
+.card-content > h1 {
+  font-family: var(--titlefont);
+  margin: 10px 0;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-icon {
+  margin-right: 15px;
+}
+.card-icon > i {
+  margin: 0 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.card-content > p {
+  font-family: var(--parafont);
+  margin: 10px 0;
+  color: var(--darkgrey);
+}
+
+.card-btn-sec {
+  margin: 20px 0;
+}
+
+.card-btn {
+  padding: 1px 18px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid var(--grey);
+  color: var(--grey);
+  font-family: var(--btnfont);
+  font-weight: 700;
+}
+
+.card-btn > i {
+  margin-right: 5px;
+}
+
+.html {
+  color: #e54c20;
+}
+
+.css {
+  color: #2e4bd2;
+}
+
+.font-awesome-icon {
+  color: #2083da;
+}
+
+.ml-10 {
+  margin-left: 20px;
+}
+/* ----------------------------------------------- */
+
+/* ------ Project section ------  */
+#project {
+  padding: 3rem var(--defultpadding);
+  z-index: -1;
+}
+/* ------------- Certificate --------------- */
+
+#certificate {
+  padding: 2rem var(--defultpadding);
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+.mlr {
+  margin: 0 30px;
+}
+/* --------------- About section -------------- */
+
+#about {
+  padding: 2rem var(--defultpadding);
+  background-color: rgb(202, 218, 237);
+}
+
+.my-image {
+  text-align: center;
+}
+
+.about-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.my-image > img {
+  width: 100px;
+  border-radius: 25px;
+}
+
+.about-para {
+  max-width: 80%;
+}
+/* ------------------- Contact ---------------------- */
+
+#contact {
+  padding: 2rem var(--defultpadding);
+  text-align: center;
+}
+
+.contact-icon {
+  /* text-align: center; */
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-icon {
+  margin: 0px 20px;
+}
+.social-icon > i {
+  font-size: 25px;
+  color: var(--grey);
+}
+
+/* ----------- Footer ------------- */
+
+#footer {
+  padding: 1rem var(--defultpadding);
+  text-align: center;
+  background-color: #c3c3c3;
+}
+
+.footer-content {
+  font-family: var(--parafont);
+}
+
+.footer-content > a {
+  color: #000;
+}
