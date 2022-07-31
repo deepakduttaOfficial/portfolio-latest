@@ -1,3 +1,5 @@
+/* ---- particles.js config ---- */
+
 particlesJS("particles-js", {
   particles: {
     number: {
@@ -8,13 +10,13 @@ particlesJS("particles-js", {
       },
     },
     color: {
-      value: "#3944F7",
+      value: "#fff",
     },
     shape: {
       type: "circle",
       stroke: {
         width: 0,
-        color: "#000000",
+        color: "#fff",
       },
       polygon: {
         nb_sides: 5,
@@ -31,27 +33,27 @@ particlesJS("particles-js", {
       },
     },
     size: {
-      value: 2,
+      value: 3,
       random: true,
       anim: {
         enable: false,
-        speed: 20,
+        speed: 40,
         size_min: 0.1,
         sync: false,
       },
     },
     line_linked: {
       enable: true,
-      distance: 100,
-      color: "#3944F7",
+      distance: 150,
+      color: "#FFD36E",
       opacity: 1,
-      width: 2,
+      width: 1,
     },
     move: {
       enable: true,
       speed: 6,
       direction: "none",
-      random: true,
+      random: false,
       straight: false,
       out_mode: "out",
       bounce: false,
@@ -103,3 +105,5 @@ particlesJS("particles-js", {
   },
   retina_detect: true,
 });
+
+/* ---- stats.js config ---- */

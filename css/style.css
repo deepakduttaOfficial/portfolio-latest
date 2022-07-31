@@ -2,10 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap");
 /* Button font  */
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600;800&display=swap");
+/* container font  */
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600;800&display=swap");
 /* Paragraph */
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 /* Brand  */
-@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap");
 
 * {
   margin: 0;
@@ -21,20 +23,25 @@ li {
 }
 
 :root {
-  --titlefont: "Titillium Web", sans-serif;
-  --parafont: "Varela Round", sans-serif;
-  --btnfont: "Cairo", sans-serif;
   --defultpadding: 4rem;
+  --card-btn-font: "Cairo", sans-serif;
+  --link-font: "Prompt", sans-serif;
+  --container-header-font: "Titillium Web", sans-serif;
+  --parafont: "Varela Round", sans-serif;
+  --brand: "Montserrat", sans-serif;
+  --light-grey: #8d8d8d;
   --grey: #7d7d7d;
-  --darkgrey: #73777b;
-  --purewhite: #ffffff;
-  --light: #cad5e2;
-  --dark: #0d0d0d;
+  --light-blue: #cad5e2;
+  --light-sky: #cadaed;
+  --light: #fbfeff;
+  --dark: #171c24;
+  --white: #ffffff;
+  --footer-color: #c3c3c3;
 }
 
 /* ------------- Top Page design ------------ */
 #particles-js {
-  background: url(../images/beanstalk-dark.webp);
+  background-color: var(--dark);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -44,32 +51,34 @@ li {
 }
 
 .header-container {
-  color: var(--purewhite);
+  color: var(--light);
   position: absolute;
   top: 35%;
   text-align: center;
 }
 
 .header-container > h2 {
-  font-family: var(--titlefont);
+  font-family: var(--link-font);
   font-size: 45px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .header-container > p {
   font-family: var(--parafont);
-  color: var(--light);
+  color: var(--light-grey);
 }
 
 .header-btn {
   padding: 10px 30px;
   margin-top: 40px;
-  border-radius: 5px;
-  font-family: var(--btnfont);
+  border: 1px solid var(--light-blue);
+  font-family: var(--link-font);
   font-size: 20px;
   cursor: pointer;
-  font-weight: 600;
-  color: var(--dark);
-  background-color: var(--purewhite);
+  font-weight: 400;
+  color: var(--light-blue);
+  background-color: transparent;
 }
 /* ----------------------------- */
 /* -------------- Navbar ---------------- */
@@ -81,7 +90,7 @@ nav {
   top: 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .menubar {
@@ -95,9 +104,12 @@ nav {
 
 .brand {
   flex-grow: 1;
-  font-family: "Merriweather Sans", sans-serif;
-  font-weight: 800;
   font-size: 22px;
+}
+.brand > a {
+  font-family: var(--brand);
+  font-weight: 900;
+  color: var(--dark);
 }
 
 .nav-list {
@@ -118,7 +130,7 @@ nav {
   padding: 5px 20px;
   border-radius: 5px;
   font-size: 18px;
-  font-family: var(--btnfont);
+  font-family: var(--link-font);
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -128,17 +140,21 @@ nav {
 }
 
 .nav-list > li:nth-child(1) > .list-item-link {
-  color: black;
+  color: var(--light-grey);
   font-weight: 500;
 }
 
 /* --------- Body ---------- */
-/* ------ Reusable components ---------- */
+.body {
+  background-color: var(--light);
+}
+/* ----------------------------- Reusable components --------------------------------- */
 .main-heading {
   text-align: center;
-  font-family: var(--titlefont);
+  font-family: var(--container-header-font);
   font-size: 35px;
   padding: 10px 0;
+  color: var(--dark);
 }
 
 .main-subheading {
@@ -148,6 +164,7 @@ nav {
 }
 
 .card-container {
+  background-color: var(--light);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -160,22 +177,22 @@ nav {
   display: inline-block;
   box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   border-radius: 7px;
-  /* width: 375px; */
   max-width: 30%;
   min-width: 350px;
   padding: 20px 10px;
   margin: 20px 10px 0 0;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .card-img-sec > img {
   width: 100%;
+  border-radius: 5px;
 }
 
 .project-box > hr {
   height: 3px;
-  background-color: #1d1d1d;
+  background-color: var(--dark);
 }
 
 .card-content {
@@ -183,7 +200,8 @@ nav {
 }
 
 .card-content > h1 {
-  font-family: var(--titlefont);
+  font-family: var(--container-header-font);
+  color: var(--dark);
   margin: 10px 0;
   font-size: 22px;
   display: flex;
@@ -202,7 +220,7 @@ nav {
 .card-content > p {
   font-family: var(--parafont);
   margin: 10px 0;
-  color: var(--darkgrey);
+  color: var(--grey);
 }
 
 .card-btn-sec {
@@ -216,7 +234,7 @@ nav {
   cursor: pointer;
   border: 2px solid var(--grey);
   color: var(--grey);
-  font-family: var(--btnfont);
+  font-family: var(--card-btn-font);
   font-weight: 700;
 }
 
@@ -262,7 +280,7 @@ nav {
 
 #about {
   padding: 2rem var(--defultpadding);
-  background-color: rgb(202, 218, 237);
+  background-color: var(--light-sky);
 }
 
 .my-image {
@@ -291,7 +309,6 @@ nav {
 }
 
 .contact-icon {
-  /* text-align: center; */
   margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
@@ -311,7 +328,7 @@ nav {
 #footer {
   padding: 1rem var(--defultpadding);
   text-align: center;
-  background-color: #c3c3c3;
+  background-color: var(--footer-color);
 }
 
 .footer-content {
