@@ -291,8 +291,8 @@ nav {
 }
 
 .my-image > img {
-  width: 100px;
-  border-radius: 25px;
+  width: 150px;
+  border-radius: 10px;
 }
 
 .about-para {
