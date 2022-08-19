@@ -251,6 +251,11 @@ nav {
   color: #2083da;
 }
 
+.tailwind {
+  cursor: pointer;
+  width: 25px;
+}
+
 .ml-10 {
   margin-left: 20px;
 }
