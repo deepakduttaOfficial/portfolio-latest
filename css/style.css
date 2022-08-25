@@ -102,7 +102,17 @@ nav {
 .brand {
   flex-grow: 1;
   font-size: 22px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
 }
+/* Logo  */
+.logo {
+  width: 35px;
+  margin-right: 10px;
+}
+
 .brand > a {
   font-family: var(--card-btn-font);
   font-weight: 900;
