@@ -2,7 +2,7 @@ const particleConfig = {
   autoPlay: true,
   background: {
     color: {
-      value: "#000",
+      value: "#1d1d1d",
     },
     image: "",
     position: "",
@@ -30,7 +30,6 @@ const particleConfig = {
   duration: 0,
   fpsLimit: 120,
   interactivity: {
-    detect_on: "canvas",
     events: {
       onhover: {
         enable: true,
@@ -44,7 +43,7 @@ const particleConfig = {
     },
     modes: {
       grab: {
-        distance: 140,
+        distance: 200,
         line_linked: {
           opacity: 1,
         },
@@ -71,7 +70,7 @@ const particleConfig = {
   manualParticles: [],
   particles: {
     number: {
-      value: 70,
+      value: 85,
       density: {
         enable: true,
         value_area: 800,

@@ -5,14 +5,12 @@ import { loadFull } from "tsparticles";
 
 const ParticaleBackground = () => {
   const particlesInit = async (main) => {
+    console.log(main);
+
     await loadFull(main);
   };
   return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={particleConfig}
-    ></Particles>
+    <Particles id="tsparticles" init={particlesInit} options={particleConfig} />
   );
 };
 

@@ -1,12 +1,11 @@
 import React from "react";
-import ParticaleBackground from "../components/ParticaleBackground";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
-    <div>
-      <ParticaleBackground />
-      Hello world
-    </div>
+    <>
+      <Hero />
+    </>
   );
 };
 
