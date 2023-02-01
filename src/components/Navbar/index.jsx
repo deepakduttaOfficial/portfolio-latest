@@ -55,7 +55,9 @@ const Navbar = () => {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link, index) => (
-                <NavLink key={index}>{link.name}</NavLink>
+                <NavLink key={index} link={link.link}>
+                  {link.name}
+                </NavLink>
               ))}
             </Stack>
           </Box>

@@ -13,6 +13,7 @@ const NavLink = ({ link, children }) => {
       }}
       href={link}
       fontWeight="medium"
+      userSelect="none"
     >
       {children}
     </Link>

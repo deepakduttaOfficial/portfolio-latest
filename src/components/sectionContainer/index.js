@@ -8,16 +8,17 @@ const SectionContainer = ({
   child,
   children,
   id,
+  opacity,
   ...rest
 }) => {
   return (
-    <Box sx={containerStyle} id={id}>
-      <VStack spacing={"10"} alignItems="start">
+    <Box sx={containerStyle} id={id} opacity={opacity}>
+      <VStack spacing={"10"} alignItems="start" w="full">
         <VStack {...rest} mx={"auto"}>
           <Heading sx={headingStyle}>{heading}</Heading>
           <Text sx={subHeadingStyle}>{subHeading}</Text>
         </VStack>
-        <Box>{children}</Box>
+        <Box w="full">{children}</Box>
       </VStack>
     </Box>
   );

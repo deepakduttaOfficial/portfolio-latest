@@ -4,6 +4,7 @@ export const containerStyle = {
   pt: "10",
   pb: "5",
   bgColor: "white",
+  w: "full",
 };
 
 export const headingStyle = {
