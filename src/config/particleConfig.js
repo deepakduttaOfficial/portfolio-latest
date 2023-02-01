@@ -2,13 +2,14 @@ const particleConfig = {
   autoPlay: true,
   background: {
     color: {
-      value: "#1d1d1d",
+      value: "#171c24",
     },
     image: "",
-    position: "",
-    repeat: "",
+    position: "absolute",
+    repeat: "no-repeat",
     size: "",
     opacity: 1,
+    top: "0",
   },
   backgroundMask: {
     composite: "destination-out",

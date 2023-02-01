@@ -1,11 +1,13 @@
+import { headingfont } from "../../utils/globalfont";
+
 export const headingStyle = {
   fontWeight: "thin",
-  fontSize: "5xl",
-  fontFamily: "poppins",
+  fontSize: ["4xl", "5xl"],
+  fontFamily: headingfont,
 };
 
 export const subHeadingStyle = {
-  fontSize: "xl",
+  fontSize: ["md", "xl"],
   color: "gray.300",
   fontWeight: "normal",
   textTransform: "uppercase",

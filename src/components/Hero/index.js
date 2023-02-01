@@ -10,18 +10,21 @@ import {
 
 const Hero = () => {
   return (
-    <>
+    <div>
+      <ParticaleBackground />
+
       <VStack sx={containerStyle} spacing="5">
         <Box textAlign={"center"}>
           <Heading sx={headingStyle}>Deepak Dutta</Heading>
-          <Text sx={subHeadingStyle}>Full Stack JavaScript Developer</Text>
+          <Text sx={subHeadingStyle}>
+            Full Stack JavaScript Developer EXPERTISE IN BACKEND DEVELOPMENT
+          </Text>
         </Box>
         <Button sx={buttonStyle} variant="ghost">
           Know more
         </Button>
       </VStack>
-      <ParticaleBackground />
-    </>
+    </div>
   );
 };
 
