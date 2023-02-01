@@ -14,9 +14,9 @@ import { headingfont } from "../../utils/globalfont";
 
 const Navbar = () => {
   const Links = [
-    { name: "Project" },
-    { name: "Certificate" },
-    { name: "About me" },
+    { name: "Project", link: "#project" },
+    { name: "Certificate", link: "#certificate" },
+    { name: "About me", link: "#aboutme" },
   ];
   const MY_NAME = "Deepak Dutta";
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -42,7 +42,9 @@ const Navbar = () => {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link, index) => (
-                <NavLink key={index}>{link.name}</NavLink>
+                <NavLink key={index} link={link.link}>
+                  {link.name}
+                </NavLink>
               ))}
             </HStack>
           </HStack>

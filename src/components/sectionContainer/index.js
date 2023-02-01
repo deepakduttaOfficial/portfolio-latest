@@ -7,10 +7,11 @@ const SectionContainer = ({
   subHeading,
   child,
   children,
+  id,
   ...rest
 }) => {
   return (
-    <Box sx={containerStyle}>
+    <Box sx={containerStyle} id={id}>
       <VStack spacing={"10"} alignItems="start">
         <VStack {...rest} mx={"auto"}>
           <Heading sx={headingStyle}>{heading}</Heading>

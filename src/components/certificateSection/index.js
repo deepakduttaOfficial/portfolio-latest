@@ -1,31 +1,30 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
-import projects from "../../data/project";
-import ProjectCard from "../Card/ProjectCard";
+import certificates from "../../data/certificate";
+import CertificateCard from "../Card/CertificateCard";
 import SectionContainer from "../sectionContainer";
 
-const ProjectSection = () => {
+const CertificateSection = () => {
   const data = {
-    heading: "Project",
-    subHeading:
-      "Open-source projects hosted on Github and deployed on Netlify.",
+    heading: "Certificate",
+    subHeading: "This certificate is the result of my tireless efforts.",
   };
-
   return (
-    <SectionContainer {...data} mt="5" id={"project"}>
+    <SectionContainer {...data} mt="5" w="full" id={"certificate"}>
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
           md: "repeat(2, 1fr)",
           lg: "repeat(3, 1fr)",
         }}
-        gap={10}
+        gap="12"
         px="10"
+        mx="auto"
       >
-        {projects.map((project, index) => {
+        {certificates.map((certificate, index) => {
           return (
             <GridItem w="100%" key={index}>
-              <ProjectCard project={project} />
+              <CertificateCard certificate={certificate} />
             </GridItem>
           );
         })}
@@ -34,4 +33,4 @@ const ProjectSection = () => {
   );
 };
 
-export default ProjectSection;
+export default CertificateSection;

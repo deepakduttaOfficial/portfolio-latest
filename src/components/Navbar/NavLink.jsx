@@ -1,7 +1,7 @@
 import { Link } from "@chakra-ui/react";
 import React from "react";
 
-const NavLink = ({ children }) => {
+const NavLink = ({ link, children }) => {
   return (
     <Link
       px={2}
@@ -11,7 +11,7 @@ const NavLink = ({ children }) => {
         textDecoration: "none",
         bg: "gray.200",
       }}
-      href={"#"}
+      href={link}
       fontWeight="medium"
     >
       {children}
