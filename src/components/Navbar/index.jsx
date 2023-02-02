@@ -5,12 +5,12 @@ import {
   IconButton,
   useDisclosure,
   Stack,
+  Select,
 } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import NavLink from "./NavLink";
 import { containerStyle } from "./style";
-import { headingfont } from "../../utils/globalfont";
 
 const Navbar = () => {
   const Links = [
@@ -18,12 +18,18 @@ const Navbar = () => {
     { name: "Certificate", link: "#certificate" },
     { name: "About me", link: "#aboutme" },
   ];
-  const MY_NAME = "Deepak Dutta";
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const v1 = (e) => {
+    // console.log("Hi");
+    window.location.href =
+      e.target.value || "https://deepakdutta-v1.netlify.app/";
+    // window.open("https://deepakdutta-v1.netlify.app/");
+  };
 
   return (
     <>
-      <Box sx={containerStyle}>
+      <Box sx={containerStyle} position="sticky" top="0" zIndex="overlay">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -33,8 +39,12 @@ const Navbar = () => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box fontFamily={headingfont} fontWeight="semibold">
-              {MY_NAME}
+            <Box
+              fontFamily={"Great Vibes"}
+              fontSize="2xl"
+              fontWeight="semibold"
+            >
+              Deepak Dutta
             </Box>
             <HStack
               as={"nav"}
@@ -48,14 +58,31 @@ const Navbar = () => {
               ))}
             </HStack>
           </HStack>
-          <Flex />
+          <Flex>
+            <Select
+              placeholder="v2.0"
+              borderColor="gray.200"
+              ring="0"
+              _focus={{ ring: "0", borderColor: "gray.200" }}
+              fontWeight="semibold"
+              isReadOnly
+              value={"v2.0"}
+              onChange={v1}
+            >
+              <option value="https://deepakdutta-v1.netlify.app/">v1.0</option>
+            </Select>
+          </Flex>
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link, index) => (
-                <NavLink key={index} link={link.link}>
+                <NavLink
+                  key={index}
+                  link={link.link}
+                  onClick={isOpen ? onClose : onOpen}
+                >
                   {link.name}
                 </NavLink>
               ))}

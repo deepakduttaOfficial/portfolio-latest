@@ -20,7 +20,14 @@ const Hero = () => {
             Full Stack JavaScript Developer EXPERTISE IN BACKEND DEVELOPMENT
           </Text>
         </Box>
-        <Button sx={buttonStyle} variant="ghost">
+        <Button
+          sx={buttonStyle}
+          variant="ghost"
+          as={"a"}
+          href="#aboutme"
+          textDecoration="none"
+          _hover={{ textDecoration: "none" }}
+        >
           Know more
         </Button>
       </VStack>

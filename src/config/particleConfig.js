@@ -71,7 +71,7 @@ const particleConfig = {
   manualParticles: [],
   particles: {
     number: {
-      value: 85,
+      value: 70,
       density: {
         enable: true,
         value_area: 800,

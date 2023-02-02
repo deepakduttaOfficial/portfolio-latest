@@ -7,3 +7,5 @@ export const containerStyle = {
   boxShadow: "lg",
   px: "5",
 };
+
+export const selectStyle = {};
