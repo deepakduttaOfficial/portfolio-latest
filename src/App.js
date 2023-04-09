@@ -1,5 +1,5 @@
-import Home from "./pages/Home";
 import "./App.css";
+import Router from "./Router";
 
 function App() {
   window.addEventListener("blur", () => {
@@ -8,7 +8,7 @@ function App() {
   window.addEventListener("focus", () => {
     document.title = "Deepak Dutta";
   });
-  return <Home />;
+  return <Router/>;
 }
 
 export default App;
