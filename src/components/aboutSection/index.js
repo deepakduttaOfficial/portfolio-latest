@@ -12,6 +12,7 @@ import SectionContainer from "../sectionContainer";
 import { BsGithub, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { IconWrapper } from "./style";
+import {myImage} from "assets"
 
 const AboutSection = () => {
   const toast = useToast();
@@ -57,10 +58,8 @@ const AboutSection = () => {
           borderRadius="full"
           boxSize="130px"
           bgColor="gray.400"
-          src={
-            "https://github.com/deepakduttaOfficial/asstes/blob/master/portfolioV2/my_image.jpg?raw=true"
-          }
-          alt="Dan Abramov"
+          src={myImage}
+          alt="Deepak Dutta"
         />
       </Stack>
       <HStack justifyContent="center" my="5">
