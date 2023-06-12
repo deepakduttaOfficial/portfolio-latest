@@ -1,36 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Badge,
   Box,
   ButtonGroup,
   Heading,
-  Image,
+  Image as ChakraImage,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import { CodeButton, headingContainer, imageStyle, LinkButton } from "./style";
+import { Blurhash } from "react-blurhash";
 
 const ProjectCard = ({ project }) => {
-  const { img, title, desc, deploy, source, tech } = project;
-  const [loading, setLoading] = useState(true);
-  const imageLoaded = () => {
-    setLoading(false);
-  };
+  const { img, blurHash, title, desc, deploy, source, tech } = project;
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = img;
+    const handleImageLoad = () => {
+      setLoaded(true);
+    };
+    image.addEventListener("load", handleImageLoad);
+    return () => {
+      image.removeEventListener("load", handleImageLoad);
+    };
+  }, [img]);
   return (
     <Box bg={"gray.50"} boxShadow="dark-lg" rounded="md">
       <Stack>
         <Box px="4" pt="4">
-          <Image
-            {...imageStyle}
-            src={img}
-            alt={title}
-            onLoad={imageLoaded}
-            height={loading && "180px"}
-            _hover={{
-              transform: "scale(1.02)",
-              boxShadow: "lg",
-            }}
-          />
+          {loaded ? (
+            <ChakraImage
+              {...imageStyle}
+              src={img}
+              alt={title}
+              _hover={{
+                transform: "scale(1.02)",
+                boxShadow: "lg",
+              }}
+              loading="lazy"
+            />
+          ) : (
+            <Blurhash
+              hash={blurHash}
+              width={"100%"}
+              height={200}
+              resolutionX={32}
+              resolutionY={32}
+              punch={1}
+            />
+          )}
           {tech.map((item, index) => (
             <Badge
               key={index}
