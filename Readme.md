@@ -1,6 +1,6 @@
 # Deepak Dutta's Portfolio Website😎
 
-- **Deploy link** - https://deepakdutta.netlify.app/
+- **Deploy link** - https://deepakdutta.me/
 
 ## Welcome to my portfolio website! I'm glad you're here to know more about me and my work.
 
