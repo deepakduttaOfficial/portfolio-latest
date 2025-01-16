@@ -1,4 +1,4 @@
-import myImage from "assets/my_images/my_image.jpg";
+import myImage from "assets/my_images/deepak.png";
 // Certificate
 import gitGithubCertificate from "assets/certificate/git_github_img.png";
 import jsDevelopmentCertificate from "assets/certificate/js_development_certificate.png";

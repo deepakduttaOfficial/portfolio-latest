@@ -60,6 +60,11 @@ const AboutSection = () => {
           bgColor="gray.400"
           src={myImage}
           alt="Deepak Dutta"
+          // width={110}
+          // height={110}
+          style={{
+            aspectRatio: 1/1
+          }}
         />
       </Stack>
       <HStack justifyContent="center" my="5">
