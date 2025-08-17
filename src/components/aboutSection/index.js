@@ -12,7 +12,7 @@ import SectionContainer from "../sectionContainer";
 import { BsGithub, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { IconWrapper } from "./style";
-import {myImage} from "assets"
+import { myImage } from "assets";
 
 const AboutSection = () => {
   const toast = useToast();
@@ -63,7 +63,7 @@ const AboutSection = () => {
           // width={110}
           // height={110}
           style={{
-            aspectRatio: 1/1
+            aspectRatio: 1 / 1,
           }}
         />
       </Stack>
@@ -75,14 +75,20 @@ const AboutSection = () => {
       </HStack>
       <Container maxW="2xl">
         <Text fontWeight="normal" fontFamily="Poppins">
-          I am Deepak Dutta, a full-stack JavaScript developer with hands-on
-          experience in developing web applications. I am currently pursuing a
-          Computer Science degree at Coochbehar College and am constantly
-          seeking new challenges to improve my skills. My experience with the
-          MERN stack has allowed me to develop over 20 landing pages and Full
-          Stack, such as jobcy and an online cake store etc. demonstrating my
-          ability to bring ideas to life. In my free time, I enjoy playing
-          cricket, which helps me to relax and recharge.
+          I am Deepak Dutta, a full-stack JavaScript developer with around 4
+          years of experience, specialising in React Native for building
+          cross-platform mobile applications on Android and iOS. I have worked
+          on mobile apps such as the Veera Health app, where I developed
+          features like meal review with AI, product modules, and background
+          notifications. I have also contributed to other apps, including a
+          crypto wallet UI and a stealth project with advanced onboarding and
+          reporting flows. 
+          <br/>
+          In addition to mobile, I have built web platforms
+          like Iksana and Sarika Eyewear, focusing on performance and
+          user-friendly design. My work mainly revolves around creating reliable
+          applications and delivering solutions that work smoothly across
+          devices.
         </Text>
       </Container>
     </SectionContainer>

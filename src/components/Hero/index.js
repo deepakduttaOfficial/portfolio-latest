@@ -17,7 +17,7 @@ const Hero = () => {
         <Box textAlign={"center"}>
           <Heading sx={headingStyle}>Deepak Dutta</Heading>
           <Text sx={subHeadingStyle}>
-            Full Stack JavaScript Developer EXPERTISE IN BACKEND DEVELOPMENT
+            React Native & Full Stack JavaScript Developer
           </Text>
         </Box>
         <Button
