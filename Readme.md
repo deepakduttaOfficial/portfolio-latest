@@ -1,4 +1,4 @@
-# Deepak Dutta's Portfolio Website😎
+# Deepak Dutta's Portfolio Website
 
 - **Deploy link** - https://deepakdutta.me/
 
