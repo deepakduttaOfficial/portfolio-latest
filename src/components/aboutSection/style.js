@@ -1,25 +1,24 @@
-import { IconButton, Link } from "@chakra-ui/react";
+import { Button, Link } from "@chakra-ui/react";
 
-export const iconButtonStyle = {
-  bgColor: "blackAlpha.300",
-  rounded: "full",
-  _hover: {
-    bgColor: "blackAlpha.400",
-    textDecoration: "none",
-  },
-};
+export const IconWrapper = ({ link, Icon, label, children, ...rest }) => {
+  const isLink = Boolean(link);
 
-export const IconWrapper = ({ link, Icon, ...rest }) => {
   return (
-    <IconButton
-      aria-label="Social-icon"
-      {...iconButtonStyle}
-      color="#26203c"
-      icon={<Icon />}
-      as={Link}
-      target="_blank"
+    <Button
+      as={isLink ? Link : "button"}
       href={link}
+      target={isLink ? "_blank" : undefined}
+      rel={isLink ? "noopener noreferrer" : undefined}
+      aria-label={label}
+      leftIcon={<Icon aria-hidden="true" />}
+      variant="outline"
+      size="md"
+      minW="0"
+      color="ivory"
+      _hover={{ borderColor: "accent", color: "accent", textDecoration: "none" }}
       {...rest}
-    />
+    >
+      {children}
+    </Button>
   );
 };
