@@ -1,11 +1,30 @@
+:root {
+  --canvas: #090b0c;
+  --graphite: #111416;
+  --panel: #171b1e;
+  --panel-strong: #1c2124;
+  --ivory: #f1eee6;
+  --muted: #9ba09d;
+  --line: rgba(241, 238, 230, 0.16);
+  --line-strong: rgba(241, 238, 230, 0.3);
+  --accent: #b7ff3c;
+  --accent-soft: rgba(183, 255, 60, 0.12);
+  --focus: #d2ff83;
+  --display: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --body: Inter, "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 5rem;
+  background: var(--canvas);
 }
 
 body {
   margin: 0;
-  background: #f4f1e8;
+  background: var(--canvas);
+  color: var(--ivory);
 }
 
 * {
@@ -13,8 +32,8 @@ body {
 }
 
 ::selection {
-  background: #b9ff66;
-  color: #171713;
+  background: var(--accent);
+  color: var(--canvas);
 }
 
 .skip-link {
@@ -23,10 +42,14 @@ body {
   left: 0.75rem;
   z-index: 2000;
   padding: 0.75rem 1rem;
-  background: #b9ff66;
-  color: #171713;
+  background: var(--accent);
+  color: var(--canvas);
+  font-family: var(--mono);
+  font-size: 0.75rem;
   font-weight: 700;
+  letter-spacing: 0.06em;
   text-decoration: none;
+  text-transform: uppercase;
   transform: translateY(-150%);
   transition: transform 160ms ease;
 }
@@ -35,17 +58,46 @@ body {
   transform: translateY(0);
 }
 
+.technical-grid {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.technical-grid-fine {
+  background-image:
+    linear-gradient(rgba(241, 238, 230, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 238, 230, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.grain::after {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+  content: "";
+  opacity: 0.06;
+  pointer-events: none;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #e6e1d5;
+  background: var(--canvas);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4e4c45;
-  border: 2px solid #e6e1d5;
+  background: #42494c;
+  border: 2px solid var(--canvas);
+}
+
+@media (max-width: 48em) {
+  .technical-grid {
+    background-size: 44px 44px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

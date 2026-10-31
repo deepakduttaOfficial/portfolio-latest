@@ -1,27 +1,24 @@
-import { IconButton, Link } from "@chakra-ui/react";
+import { Button, Link } from "@chakra-ui/react";
 
-export const IconWrapper = ({ link, Icon, label, ...rest }) => {
+export const IconWrapper = ({ link, Icon, label, children, ...rest }) => {
   const isLink = Boolean(link);
 
   return (
-    <IconButton
+    <Button
       as={isLink ? Link : "button"}
       href={link}
       target={isLink ? "_blank" : undefined}
       rel={isLink ? "noopener noreferrer" : undefined}
       aria-label={label}
-      icon={<Icon aria-hidden="true" />}
+      leftIcon={<Icon aria-hidden="true" />}
       variant="outline"
-      borderColor="ink"
-      borderRadius="0"
-      color="ink"
-      _hover={{ bg: "ink", color: "paper", textDecoration: "none" }}
-      _focusVisible={{
-        outline: "3px solid",
-        outlineColor: "blue.500",
-        outlineOffset: "3px",
-      }}
+      size="md"
+      minW="0"
+      color="ivory"
+      _hover={{ borderColor: "accent", color: "accent", textDecoration: "none" }}
       {...rest}
-    />
+    >
+      {children}
+    </Button>
   );
 };

@@ -1,3 +1,4 @@
+import heroImage from "assets/my_images/deepak.png";
 import myImage from "assets/my_images/deepak_cool.jpg";
 import gitGithubCertificate from "assets/certificate/git_github_img.png";
 import jsDevelopmentCertificate from "assets/certificate/js_development_certificate.png";
@@ -10,6 +11,7 @@ import tradingViewProLandingPageProject from "assets/projects/tradingviewpro_lan
 import chatFinderProject from "assets/projects/chat_finder.png";
 
 export {
+  heroImage,
   myImage,
   gitGithubCertificate,
   jsDevelopmentCertificate,

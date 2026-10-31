@@ -1,22 +1,23 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const focusRing = {
-  outline: "3px solid",
-  outlineColor: "accent",
-  outlineOffset: "3px",
+  outline: "2px solid",
+  outlineColor: "var(--focus)",
+  outlineOffset: "4px",
 };
 
 const theme = extendTheme({
   colors: {
-    ink: "#171713",
-    paper: "#f4f1e8",
-    sand: "#e6e1d5",
-    muted: "#55534c",
-    line: "#b8b2a5",
-    accent: "#b9ff66",
+    canvas: "#090b0c",
+    graphite: "#111416",
+    panel: "#171b1e",
+    ivory: "#f1eee6",
+    muted: "#9ba09d",
+    line: "rgba(241, 238, 230, 0.16)",
+    accent: "#b7ff3c",
   },
   fonts: {
-    heading: 'Georgia, "Times New Roman", serif',
+    heading: '"Arial Black", "Helvetica Neue", Arial, sans-serif',
     body: 'Inter, "Avenir Next", Avenir, "Segoe UI", sans-serif',
     mono: '"SFMono-Regular", Consolas, "Liberation Mono", monospace',
   },
@@ -25,8 +26,8 @@ const theme = extendTheme({
       "html, body": {
         margin: 0,
         padding: 0,
-        bg: "paper",
-        color: "ink",
+        bg: "canvas",
+        color: "ivory",
       },
       body: {
         fontSize: "16px",
@@ -45,35 +46,35 @@ const theme = extendTheme({
         fontFamily: "mono",
         fontSize: "xs",
         fontWeight: "700",
-        letterSpacing: "0.04em",
+        letterSpacing: "0.07em",
         textTransform: "uppercase",
+        transition: "background-color 180ms ease, color 180ms ease, border-color 180ms ease",
         _focusVisible: focusRing,
       },
       sizes: {
         md: { h: "12", px: "6" },
+        lg: { h: "14", px: "8", fontSize: "sm" },
       },
       variants: {
         accent: {
           bg: "accent",
-          color: "ink",
+          color: "canvas",
           border: "1px solid",
           borderColor: "accent",
-          _hover: { bg: "transparent", color: "accent" },
-        },
-        heroOutline: {
-          bg: "transparent",
-          color: "paper",
-          border: "1px solid",
-          borderColor: "whiteAlpha.500",
-          _hover: { borderColor: "paper", bg: "whiteAlpha.100" },
+          _hover: { bg: "ivory", borderColor: "ivory" },
         },
         outline: {
           bg: "transparent",
-          color: "ink",
+          color: "ivory",
           border: "1px solid",
-          borderColor: "ink",
-          _hover: { bg: "ink", color: "paper" },
+          borderColor: "rgba(241, 238, 230, 0.42)",
+          _hover: { borderColor: "accent", color: "accent" },
         },
+      },
+    },
+    Link: {
+      baseStyle: {
+        _focusVisible: focusRing,
       },
     },
   },
