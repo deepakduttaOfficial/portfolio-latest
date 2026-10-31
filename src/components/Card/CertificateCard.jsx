@@ -1,72 +1,25 @@
-import React, { useState, useEffect } from "react";
-import {
-  Box,
-  ButtonGroup,
-  Heading,
-  Image as ChakraImage,
-  Stack,
-} from "@chakra-ui/react";
-import { headingContainer, imageStyle, LinkButton } from "./style";
-import { Blurhash } from "react-blurhash";
+import { AspectRatio, Box, Heading, Image, Link, Stack, Text } from "@chakra-ui/react";
+import { FiArrowUpRight } from "react-icons/fi";
+import { externalLinkStyle } from "./style";
 
-const CertificateCard = ({ certificate }) => {
-  const { img, title, link, blurHash } = certificate;
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const image = new Image();
-    image.src = img;
-    const handleImageLoad = () => {
-      setLoaded(true);
-    };
-    image.addEventListener("load", handleImageLoad);
-    return () => {
-      image.removeEventListener("load", handleImageLoad);
-    };
-  }, [img]);
+const CertificateCard = ({ certificate, index }) => {
+  const { img, title, link } = certificate;
 
   return (
-    <Box bg={"gray.50"} boxShadow="dark-lg" rounded="md">
-      <Stack>
-        <Box px="4" pt="4">
-          {loaded ? (
-            <ChakraImage
-              {...imageStyle}
-              src={img}
-              alt={title}
-              height={{ base: "auto", md: "200px" }}
-              w="full"
-              loading="lazy"
-              _hover={{
-                transform: "scale(1.02)",
-                boxShadow: "lg",
-              }}
-            />
-          ) : (
-            <Blurhash
-              hash={blurHash}
-              width={"100%"}
-              height={200}
-              resolutionX={32}
-              resolutionY={32}
-              punch={1}
-            />
-          )}
-        </Box>
-        <Stack {...headingContainer}>
-          <Heading
-            size="26px"
-            letterSpacing="1px"
-            textTransform="uppercase"
-            fontWeight="semibold"
-          >
-            {title}
-          </Heading>
-        </Stack>
-
-        <ButtonGroup spacing="4" px="4" pb={"5"} pt="2">
-          <LinkButton href={link}>Link</LinkButton>
-        </ButtonGroup>
+    <Box as="article" borderTop="1px solid" borderColor="line" pt="4">
+      <Text mb="4" fontFamily="mono" fontSize="xs" color="muted">
+        {String(index + 1).padStart(2, "0")}
+      </Text>
+      <AspectRatio ratio={4 / 3} overflow="hidden" bg="sand">
+        <Image src={img} alt={`${title} certificate`} loading="lazy" decoding="async" objectFit="cover" />
+      </AspectRatio>
+      <Stack spacing="4" pt="5">
+        <Heading as="h3" fontSize="xl" lineHeight="1.3" letterSpacing="-0.02em">
+          {title}
+        </Heading>
+        <Link href={link} target="_blank" rel="noopener noreferrer" aria-label={`View ${title} certificate`} sx={externalLinkStyle} alignSelf="flex-start">
+          View credential <FiArrowUpRight aria-hidden="true" />
+        </Link>
       </Stack>
     </Box>
   );

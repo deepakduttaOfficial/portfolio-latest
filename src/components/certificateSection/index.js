@@ -1,36 +1,21 @@
-import { Grid, GridItem } from "@chakra-ui/react";
-import React from "react";
+import { SimpleGrid } from "@chakra-ui/react";
 import certificates from "../../data/certificate";
 import CertificateCard from "../Card/CertificateCard";
 import SectionContainer from "../sectionContainer";
 
-const CertificateSection = () => {
-  const data = {
-    heading: "Certificate",
-    subHeading: "This certificate is the result of my tireless efforts.",
-  };
-  return (
-    <SectionContainer {...data} mt="5" w="full" id={"certificate"}>
-      <Grid
-        templateColumns={{
-          base: "repeat(1, 1fr)",
-          md: "repeat(2, 1fr)",
-          lg: "repeat(3, 1fr)",
-        }}
-        gap="12"
-        px="10"
-        mx="auto"
-      >
-        {certificates.map((certificate, index) => {
-          return (
-            <GridItem w="100%" key={index}>
-              <CertificateCard certificate={certificate} />
-            </GridItem>
-          );
-        })}
-      </Grid>
-    </SectionContainer>
-  );
-};
+const CertificateSection = () => (
+  <SectionContainer
+    id="certificate"
+    sectionNumber="03"
+    heading="Credentials"
+    subHeading="This certificate is the result of my tireless efforts."
+  >
+    <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacingX="8" spacingY="14">
+      {certificates.map((certificate, index) => (
+        <CertificateCard key={certificate.title} certificate={certificate} index={index} />
+      ))}
+    </SimpleGrid>
+  </SectionContainer>
+);
 
 export default CertificateSection;

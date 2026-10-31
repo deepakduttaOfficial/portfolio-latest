@@ -1,85 +1,54 @@
-import React, { useState, useEffect } from "react";
-import {
-  Badge,
-  Box,
-  ButtonGroup,
-  Heading,
-  Image as ChakraImage,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import { CodeButton, headingContainer, imageStyle, LinkButton } from "./style";
-import { Blurhash } from "react-blurhash";
+import { AspectRatio, Box, Flex, Heading, Image, Link, Stack, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { FiArrowUpRight, FiGithub } from "react-icons/fi";
+import { externalLinkStyle } from "./style";
 
-const ProjectCard = ({ project }) => {
-  const { img, blurHash, title, desc, deploy, source, tech } = project;
-  const [loaded, setLoaded] = useState(false);
+const ProjectCard = ({ project, index }) => {
+  const { img, title, desc, deploy, source, tech } = project;
 
-  useEffect(() => {
-    const image = new Image();
-    image.src = img;
-    const handleImageLoad = () => {
-      setLoaded(true);
-    };
-    image.addEventListener("load", handleImageLoad);
-    return () => {
-      image.removeEventListener("load", handleImageLoad);
-    };
-  }, [img]);
   return (
-    <Box bg={"gray.50"} boxShadow="dark-lg" rounded="md">
-      <Stack>
-        <Box px="4" pt="4">
-          {loaded ? (
-            <ChakraImage
-              {...imageStyle}
-              src={img}
-              alt={title}
-              _hover={{
-                transform: "scale(1.02)",
-                boxShadow: "lg",
-              }}
-              loading="lazy"
-            />
-          ) : (
-            <Blurhash
-              hash={blurHash}
-              width={"100%"}
-              height={200}
-              resolutionX={32}
-              resolutionY={32}
-              punch={1}
-            />
-          )}
-          {tech.map((item, index) => (
-            <Badge
-              key={index}
-              variant="outline"
-              colorScheme={"blue"}
-              mr="2"
-              px="2"
-              mt="2"
-            >
-              {item}
-            </Badge>
+    <Box as="article" borderTop="1px solid" borderColor="line" pt="4">
+      <Flex justify="space-between" align="baseline" mb="4" gap="4">
+        <Text fontFamily="mono" fontSize="xs" color="muted">
+          {String(index + 1).padStart(2, "0")}
+        </Text>
+        <Wrap justify="flex-end" spacingX="3" spacingY="1">
+          {tech.map((item) => (
+            <WrapItem key={item}>
+              <Text fontFamily="mono" fontSize="10px" color="muted" textTransform="uppercase" letterSpacing="0.08em">
+                {item}
+              </Text>
+            </WrapItem>
           ))}
-        </Box>
-        <Stack {...headingContainer}>
-          <Heading
-            size="26px"
-            letterSpacing="1px"
-            textTransform="uppercase"
-            fontWeight="semibold"
-          >
-            {title}
-          </Heading>
-          <Text>{desc}</Text>
-        </Stack>
+        </Wrap>
+      </Flex>
 
-        <ButtonGroup spacing="4" px="4" pb={"5"} pt="2">
-          <LinkButton href={deploy}>Link</LinkButton>
-          <CodeButton href={source}>Source</CodeButton>
-        </ButtonGroup>
+      <AspectRatio ratio={16 / 10} overflow="hidden" bg="sand">
+        <Image
+          src={img}
+          alt={`${title} interface preview`}
+          loading="lazy"
+          decoding="async"
+          objectFit="cover"
+          transition="transform 220ms ease"
+          _hover={{ transform: "scale(1.015)" }}
+        />
+      </AspectRatio>
+
+      <Stack spacing="4" pt="6">
+        <Heading as="h3" fontSize={{ base: "2xl", md: "3xl" }} lineHeight="1.1" letterSpacing="-0.03em">
+          {title}
+        </Heading>
+        <Text color="muted" lineHeight="1.8">
+          {desc}
+        </Text>
+        <Flex gap="6" wrap="wrap" pt="2">
+          <Link href={deploy} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} live site`} sx={externalLinkStyle}>
+            Live site <FiArrowUpRight aria-hidden="true" />
+          </Link>
+          <Link href={source} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} source code`} sx={externalLinkStyle}>
+            Source <FiGithub aria-hidden="true" />
+          </Link>
+        </Flex>
       </Stack>
     </Box>
   );
